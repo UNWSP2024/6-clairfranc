@@ -13,19 +13,23 @@
 STATE_SALES_TAX = .05
 COUNTY_SALES_TAX = .025
 
+def add_tax(state, county):
+    return state + county
 
 def calculate_monthly_tax_report():
 
     total_sales_for_month = float(input("Enter total sales for the month here: "))
     state_sales_tax = total_sales_for_month * STATE_SALES_TAX
     county_sales_tax = total_sales_for_month * COUNTY_SALES_TAX
-    total_tax = state_sales_tax + county_sales_tax
+
 
     print(f'State sales tax: ${state_sales_tax:,.2f}.')
     print(f'County sales tax: ${county_sales_tax:,.2f}.')
-    print(f'Total sales tax: ${total_tax:,.2f}.')
+    print(f'Total sales tax: ${float(add_tax(state_sales_tax, county_sales_tax)):,.2f}.')
 
 if __name__ == '__main__':
     calculate_monthly_tax_report()
+
+
 
 
